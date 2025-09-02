@@ -200,6 +200,7 @@ return {
 						},
 					},
 				},
+				html = {},
 			}
 
 			-- Ensure the servers and tools above are installed
