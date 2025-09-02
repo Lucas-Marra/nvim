@@ -245,7 +245,28 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup(
-	"plugins",
+	{
+		"ThePrimeagen/vim-be-good",
+
+		-- Colorschemes
+		{ "rose-pine/neovim", name = "rose-pine" },
+		{ "dracula/vim", name = "dracula" },
+		{ "catppuccin/nvim", name = "catppuccin" },
+		{ "Rigellute/shades-of-purple.vim", name = "shades-of-purple" },
+		{ "getomni/neovim", name = "omni-theme" },
+		{ "Mofiqul/vscode.nvim", name = "vscode" },
+		{
+			"folke/tokyonight.nvim",
+			priority = 1000, -- Make sure to load this before all the other start plugins.
+			opts = {
+				styles = {
+					comments = { italic = false },
+				},
+			},
+		},
+
+		{ import = "plugins" },
+	},
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
@@ -310,6 +331,8 @@ require("lazy").setup(
 		},
 	}
 )
+
+vim.cmd.colorscheme("tokyonight-night")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=4 sts=4 sw=4 et
